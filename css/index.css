@@ -1,0 +1,288 @@
+/*格式化全局样式*/
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 0.14rem;
+}
+li{list-style-type: none;}
+a{text-decoration: none;color: #000;}
+input{outline: none;}
+
+/*ipad下设好总体样式*/
+#app{
+	max-width: 7.68rem;
+	min-width:320px;
+	margin: 0 auto;
+}
+/*页头导航栏区*/
+.header{
+	height: 5.5rem;
+	width: 100%;
+	background-color: #B2C5CC;
+}
+.header.nav{
+	width: 100%;
+	height: 0.5rem;
+	overflow: hidden;
+}
+.nav-box{
+	width: 50%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.nav-box2{
+	display: none;
+}
+.nav-box .active{
+	color: #afafaf;
+}
+.nav-box a{
+	color: #757575;
+	display: block;
+	float: left;
+	padding: 0 0.2rem;
+}
+.nav-box a:hover{
+	animation:fontchange .5s;
+	animation-fill-mode: forwards;
+}
+/*顶部导航鼠标经过动画*/
+@-webkit-keyframes fontchange{
+	from{color: #757575;}
+	to{color: #afafaf;}
+}
+/*按钮动画*/
+@-webkit-keyframes buttonchange{
+	from{background-color: #fff;color: #000;}
+	to{background-color: #B2C5CC;color: #fff;}
+}
+.container{
+	width: 1.8rem;
+	height:4rem;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.container img{
+	width: 1.3rem;
+}
+.container span{
+	color: #fff;
+}
+.container .start{
+	width: 1.4rem;
+	height: 0.4rem;
+	border: 2px solid #fff;
+	background-color: #fff;
+	cursor: pointer;
+	line-height: 0.14rem;
+}
+.container .start:hover{
+	animation:buttonchange .5s;
+	animation-fill-mode: forwards;
+}
+
+/*花朵图片装饰区*/
+.nav2{
+	width: 100%;
+	height: 0.6rem;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: #bababa;
+}
+.nav2 span:hover{
+	animation:fontchange2 .5s;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+.nav2 > .active{
+	color: #545454;
+}
+@keyframes fontchange2{
+	from{color: #bababa; }
+	to{color: #545454;}
+}
+
+/*信息内容介绍区*/
+.article{
+	width: 100%;
+	height: 4rem;
+	position: relative;
+}
+.article .container2{
+    width: 3.5rem;
+    height: 2rem; 
+	position: absolute;
+	left: 0;top: 0;right: 0;bottom: 0;
+	margin: auto;
+}
+.article h1{
+	font-size: 0.2rem;
+	text-align: center;
+	margin:10px 0;
+	font-weight: lighter;
+}
+.article p{
+	font-size: 0.14rem;
+	line-height: 0.22rem;
+	color: #bababa;
+}
+
+/*欢迎语句区*/
+.welcome{
+	width: 100%;
+	height: .6rem;
+	background-color: #eee;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.welcome span{
+	margin: 0 .5rem; 
+	color: #bababa;
+}
+
+/*主打课程区*/
+.banner{
+	width: 100%;
+	height: 5.5rem;
+	overflow: hidden;
+	background:url('../img/bg.jpg') no-repeat;
+	background-size: cover;
+}
+.banner .banner-box{
+	width: 7rem;
+	height: 5.5rem;
+	padding-top: 0.5rem;
+	margin: 0 auto;
+}
+.banner h1{
+	font-size: 0.25rem;
+	font-weight: lighter;
+}
+.banner .banner-img{
+	width: 7rem;
+	height: 4.2rem;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0 auto;
+}
+.banner .banner-img .imgContainer{
+	width: 31%;
+	height: 44%;
+	overflow: hidden;
+}
+.banner .banner-img img{
+	width:100%;
+	height: 100%;
+}
+.banner .banner-img img:hover{
+	animation:scale 0.5s;
+	animation-fill-mode: forwards;
+}
+/*页脚区*/
+footer{
+	width:100%;
+	height: 0.5rem;
+	background-color: #eee;
+	text-align: center;
+	line-height: 0.5rem;
+}
+/*图片缩放动画*/
+@keyframes scale{
+	from{transform: scale(1);}
+	to{transform: scale(1.2);}
+}
+
+
+/*手机样式*/
+@media screen and (min-width: 100px) and (max-width: 760px){
+	#app{
+		width:100%;
+	}
+	.header > .nav > .nav-box{
+		display: none;
+	}
+	.header > .nav > .nav-box2{
+		display: block;
+		width:100%;
+		height: 0.9rem;
+		line-height: 0.9rem;
+		background-color: #7EA6B1;
+		position: relative;
+	}
+	.header > .nav > .nav-box2 h2{
+		text-align: center;
+		color: #fff;
+		width:100%;
+		height: 0.9rem;
+		background-color: #7EA6B1;
+		position: absolute;
+		left: 0;top: 0;
+		z-index: 1;
+	}
+	.header > .nav > .nav-box2 #btn{
+		display: block;
+		position: absolute;
+		z-index: 99;
+		right: 0.3rem;
+		top: 0.3rem;
+		width:0.3rem;
+		height: 0.3rem;
+		border: 1px solid #ddd;
+	}
+	.header > .nav > .nav-box2 > .nav-menu{
+		position: absolute;
+		z-index: 0;
+		top: -5rem;
+		background-color: #7EA6B1;
+		width:100%;
+		transition: all .5s;
+		-ms-transition: all .5s;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+	}
+	.header > .nav > .nav-box2 > .nav-menu a{
+		text-align: center;
+		display: block;
+		width:100%;
+		border-bottom: 1px solid #ddd;
+		color: #fff;
+	}
+	.header > .nav > .nav-box2 > .nav-menu > a:first-child{
+		border-top: 1px solid #ddd;
+	}
+	.container .start{
+		width: 1.5rem;
+		height: 0.5rem;
+	}
+	.article{
+		height: 6rem;
+	}
+	.article .container2{
+	    width: 6rem;
+	    height: 6rem; 
+		overflow: hidden;
+	}
+	.article h1{
+		font-size: 0.5rem;
+		margin:.5rem 0 .1rem 0;
+	}
+	.article p{
+		line-height: 0.4rem;
+	}
+	.welcome{
+		height: 1rem;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
